@@ -2,10 +2,9 @@
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% extends "form-template.njk" %}
-{% set hmpoPageKey = "fraud" %}
+{% set hmpoPageKey = "check" %}
 
 {% block mainContent %}
-
 <h1 id="header">{{translate("pages.check.title")}} </h1>
 {% call hmpoForm(ctx) %}
 

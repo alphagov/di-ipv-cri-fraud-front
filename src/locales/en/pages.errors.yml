@@ -1,6 +1,6 @@
 
 error:
-  title: Something went wrong!
+  title: Sorry, there is a problem with the service
   content:
     - '{{ error.message }}'
     - '{{ error | dump }}'
