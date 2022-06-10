@@ -8,7 +8,7 @@ Feature: Error handling
     Given Error Ethem is using the system
     And they have provided their details
 
-  @mock-api:fraud-check-error
+  @mock-api:fraud-session-error
   Scenario: API error
     Given they have started the Fraud journey
     And they can see the check page

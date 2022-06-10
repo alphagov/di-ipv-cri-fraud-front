@@ -6,12 +6,12 @@ module.exports = class PlaywrightDevPage {
     this.page = page;
   }
 
-  getErrorTitle() {
-    return this.page.textContent('[data-page="errors.error"]');
+  getSomethingWentWrongMessage() {
+    return "Sorry, there is a problem with the service";
   }
 
-  getSomethingWentWrongMessage() {
-    return "Something went wrong!";
+  getErrorTitle() {
+    return this.page.textContent("h1");
   }
 
   isCurrentPage() {
