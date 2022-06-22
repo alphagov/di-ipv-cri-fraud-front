@@ -23,7 +23,39 @@
     </div>
 </details>
 
+<button id="button2" class="govuk-button govuk-visually-hidden" data-module="govuk-button">Continue</button>
+<!--
+
+<button class="govuk-button govuk-!-margin-top-4" id="button--save" data-module="govuk-button" >Continue</button>
+-->
 {{ hmpoSubmit(ctx, {text: translate("buttons.next")}) }}
+
+<script type="text/javascript">
+    submitSpinner()
+
+    function buttonClicked(target) {
+        target.setAttribute('disabled', 'disabled')
+        target.className += ' button--save'
+        setTimeout(function () {
+            document.getElementById('button2').click()
+        }, 2000)
+    }
+
+    function submitSpinner() {
+        //var selects = document.getElementById('button--save')
+        var selects = document.getElementById('hmpoSubmit')
+        selects.addEventListener('click', function (event) {
+            event.preventDefault()
+            if (selects.getAttribute('disabled') === 'disabled') {
+                console.log('already clicked')
+            } else {
+                event.preventDefault()
+                console.log(selects.getAttribute('disabled'))
+                buttonClicked(selects)
+            }
+        })
+    }
+</script>
 
 {% endcall %}
 {% endblock %}
